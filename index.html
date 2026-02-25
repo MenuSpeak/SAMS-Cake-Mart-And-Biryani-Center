@@ -219,14 +219,21 @@
             color: #d44e2e;
             position: relative;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .card-img i {
-            background: rgba(255,255,240,0.3);
+            background: rgba(255,255,240,0.7);
             padding: 1rem;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             z-index: 2;
+        }
+
+        .card-img.has-image i {
+            display: none;
         }
 
         .veg-tag {
@@ -535,7 +542,8 @@
             <div class="category-badge"><i class="fas fa-ice-cream"></i> ICE CAKE - Regular Flavours</div>
             <div class="card-grid">
                 <div class="card" id="regular-ice-cake">
-                    <div class="card-img">
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="regular-ice-cake.jpeg">
                         <i class="fas fa-chocolate fa-4x"></i>
                         <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
                     </div>
@@ -583,7 +591,8 @@
 
                 <!-- ICE CAKES - Special Flavours -->
                 <div class="card" id="special-ice-cake">
-                    <div class="card-img">
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="special-ice-cake.jpeg">
                         <i class="fas fa-crown fa-4x"></i>
                         <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
                     </div>
@@ -629,7 +638,8 @@
             <div class="category-badge"><i class="fas fa-birthday-cake"></i> BUTTERCREAM CAKE</div>
             <div class="card-grid">
                 <div class="card" id="buttercream-cake">
-                    <div class="card-img">
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="buttercream-cake.jpeg">
                         <i class="fas fa-birthday-cake fa-4x"></i>
                         <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
                     </div>
@@ -674,7 +684,8 @@
             <div class="category-badge"><i class="fas fa-bread-slice"></i> DRY CAKE - Without Cream</div>
             <div class="card-grid">
                 <div class="card" id="dry-cake">
-                    <div class="card-img">
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="dry-cake.jpeg">
                         <i class="fas fa-bread-slice fa-4x"></i>
                         <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
                     </div>
@@ -727,7 +738,8 @@
             <div class="category-badge"><i class="fas fa-cupcake"></i> CUPCAKES</div>
             <div class="card-grid">
                 <div class="card" id="cupcakes">
-                    <div class="card-img">
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="cupcakes.jpeg">
                         <i class="fas fa-cupcake fa-4x"></i>
                         <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
                     </div>
@@ -773,7 +785,10 @@
             <div class="biryani-tag"><i class="fas fa-motorcycle"></i> Biryani Parcel Service – fresh & spicy</div>
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-img"><i class="fas fa-drumstick-bite fa-4x"></i></div>
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="">
+                        <i class="fas fa-drumstick-bite fa-4x"></i>
+                    </div>
                     <div class="card-content">
                         <h3>Chicken Dum Biryani</h3>
                         <p class="cake-desc">Fragrant basmati, tender chicken, dum style</p>
@@ -782,7 +797,10 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img"><i class="fas fa-utensils fa-4x"></i></div>
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="">
+                        <i class="fas fa-utensils fa-4x"></i>
+                    </div>
                     <div class="card-content">
                         <h3>Mutton Biryani</h3>
                         <p class="cake-desc">Slow cooked succulent mutton, rich masala</p>
@@ -791,7 +809,10 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img"><i class="fas fa-carrot fa-4x"></i></div>
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="">
+                        <i class="fas fa-carrot fa-4x"></i>
+                    </div>
                     <div class="card-content">
                         <h3>Veg Hyderabadi</h3>
                         <p class="cake-desc">Fresh veggies, aromatic spices & herbs</p>
@@ -807,7 +828,10 @@
             <h2 class="section-title"><i class="fas fa-gift" style="color:#de347f;"></i> Customized Gifts</h2>
             <div class="card-grid gift-grid">
                 <div class="card gift-card">
-                    <div class="card-img"><i class="fas fa-camera-retro fa-4x"></i></div>
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="">
+                        <i class="fas fa-camera-retro fa-4x"></i>
+                    </div>
                     <div class="card-content">
                         <h3>Personalized Photo Frames</h3>
                         <p class="cake-desc"><i class="fas fa-heart"></i> ceramic & wooden frames with your picture</p>
@@ -816,7 +840,10 @@
                     </div>
                 </div>
                 <div class="card gift-card">
-                    <div class="card-img"><i class="fas fa-mug-hot fa-4x"></i></div>
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="">
+                        <i class="fas fa-mug-hot fa-4x"></i>
+                    </div>
                     <div class="card-content">
                         <h3>Custom Mugs</h3>
                         <p class="cake-desc"><i class="fas fa-paint-brush"></i> print name/photo, magic heat-change</p>
@@ -825,7 +852,10 @@
                     </div>
                 </div>
                 <div class="card gift-card">
-                    <div class="card-img"><i class="fas fa-hamsa fa-4x"></i></div>
+                    <!-- Yahan apni image ka path daalein -->
+                    <div class="card-img" data-image-src="">
+                        <i class="fas fa-hamsa fa-4x"></i>
+                    </div>
                     <div class="card-content">
                         <h3>Custom Gift Hampers</h3>
                         <p class="cake-desc"><i class="fas fa-candy-cane"></i> cake + mug + sweets + photo frame</p>
@@ -880,6 +910,17 @@
             cupcake: { size: '1 Piece', flavour: 'Chocolate Cupcake' }
         };
 
+        // Function to set product images
+        function setProductImages() {
+            document.querySelectorAll('.card-img').forEach(imgContainer => {
+                const imageSrc = imgContainer.getAttribute('data-image-src');
+                if (imageSrc && imageSrc.trim() !== '') {
+                    imgContainer.style.backgroundImage = `url('${imageSrc}')`;
+                    imgContainer.classList.add('has-image');
+                }
+            });
+        }
+
         // Initialize all cake cards
         document.addEventListener('DOMContentLoaded', function() {
             // Setup size button clicks for each cake
@@ -917,6 +958,9 @@
             updatePrice('buttercream');
             updatePrice('dry');
             updatePrice('cupcake');
+
+            // Set product images
+            setProductImages();
         });
 
         function updatePrice(cakeType) {
