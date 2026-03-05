@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMS Cake Mart & Biryani Center</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #fef8f5;
+            color: #2d1e12;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(145deg, #ffffff 0%, #fff7f0 100%);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05), 0 2px 6px rgba(251, 94, 54, 0.1);
+            padding: 0.8rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(130deg, #d44e2e 0%, #e67137 40%, #de347f 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            display: block;
+            color: #c24f2a;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #4a2e1b;
+            padding: 0.5rem 0.8rem;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            font-size: 1.05rem;
+        }
+
+        nav a:hover {
+            background: #fbe3d5;
+            color: #d63e1e;
+        }
+
+        .hero {
+            background: linear-gradient(125deg, #ffe3d6 0%, #ffdad0 40%, #fee2f0 100%);
+            padding: 3.5rem 5%;
+            text-align: center;
+            border-bottom: 4px solid #ff9467;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #932b1b;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin: 1rem 0 2rem;
+            color: #4c2a19;
+        }
+
+        .cta-btn {
+            background: #e6552e;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 60px;
+            box-shadow: 0 12px 22px -8px #e6552e80;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid #ffb397;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background: #c43e1a;
+            transform: scale(1.02);
+            box-shadow: 0 20px 28px -6px #b13b1e;
+        }
+
+        .contact-strip {
+            background: #2e1c10;
+            color: white;
+            padding: 0.7rem 5%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            font-size: 1.3rem;
+        }
+
+        .contact-strip a {
+            color: white;
+            text-decoration: none;
+            background: #3f2c1e;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+
+        .contact-strip a:hover {
+            background: #c24f2a;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            margin: 3rem 0 2rem;
+            padding-bottom: 0.75rem;
+            display: inline-block;
+            border-bottom: 5px solid #f06a3b;
+            color: #391f12;
+            font-weight: 700;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #e6552e;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            letter-spacing: 1px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #ffdec9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px #e6552e;
+        }
+
+        .card-img-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #f8e3d8;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card-img i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: #d44e2e;
+            background: rgba(255,255,255,0.8);
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: #e6552e;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: 0.2s;
+            z-index: 10;
+            opacity: 0;
+        }
+
+        .card-img-container:hover .carousel-btn {
+            opacity: 1;
+        }
+
+        .carousel-btn:hover {
+            background: #e6552e;
+            color: white;
+        }
+
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+
+        .image-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            border-radius: 30px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .dot.active {
+            background: #e6552e;
+            transform: scale(1.3);
+        }
+
+        .veg-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #4CAF50;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        .nonveg-tag {
+            background: #f44336;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #2d1e12;
+        }
+
+        .card h3 small {
+            font-size: 0.85rem;
+            color: #e6552e;
+            font-weight: 400;
+            display: block;
+        }
+
+        .flavour-section, .size-section, .type-section {
+            margin: 1rem 0;
+        }
+
+        .flavour-label, .size-label, .type-label {
+            font-weight: 600;
+            color: #4a2e1b;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .flavour-select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 2px solid #ffdec9;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #2d1e12;
+            background: white;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .flavour-select:focus {
+            border-color: #e6552e;
+        }
+
+        .size-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .size-btn {
+            background: #fce6d9;
+            border: 2px solid #e6865a;
+            color: #932b1b;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            flex: 1 0 auto;
+        }
+
+        .size-btn.active {
+            background: #e6552e;
+            border-color: #e6552e;
+            color: white;
+        }
+
+        .size-btn:hover {
+            background: #e6865a;
+            color: white;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: #c9491e;
+            font-size: 1.5rem;
+            display: block;
+            margin: 1rem 0;
+            background: #fff0e7;
+            padding: 0.5rem;
+            border-radius: 40px;
+            text-align: center;
+        }
+
+        .whatsapp-order {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid #1da958;
+        }
+
+        .whatsapp-order:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px #25d36670;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #fff2e7, #ffede3);
+            padding: 3rem 5%;
+            border-radius: 50px 50px 0 0;
+            margin-top: 3rem;
+        }
+
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info {
+            flex: 1 1 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: #923a1f;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-wa, .btn-call {
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-call {
+            background: #3b3b3b;
+            color: white;
+        }
+
+        footer {
+            background: #241a13;
+            color: #ddd;
+            text-align: center;
+            padding: 1.8rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            nav ul {
+                justify-content: center;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .cta-btn {
+                font-size: 1.3rem;
+                padding: 0.8rem 2rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>SAMS Cake Mart <span>& Biryani Center</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cakes">Cakes</a></li>
+                    <li><a href="#biryani">Biryani</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Craving for cakes or biryani?</h2>
+            <p>💥 Fresh, aromatic & customized — doorstep delivery available</p>
+            <a href="#contact" class="cta-btn"><i class="fas fa-hand-point-right"></i> Place Your Order</a>
+        </div>
+    </section>
+
+    <div class="contact-strip">
+        <a href="tel:7588627645"><i class="fas fa-phone-alt"></i> 7588627645</a>
+        <a href="https://wa.me/917588627645?text=Hello%20SAMS!%20I%20want%20to%20order%20..." target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp order</a>
+    </div>
+
+    <div class="container">
+        <!-- CAKES SECTION -->
+        <section id="cakes">
+            <h2 class="section-title"><i class="fas fa-birthday-cake"></i> Our Cakes</h2>
+            
+            <!-- Regular Ice Cake -->
+            <div class="category-badge"><i class="fas fa-ice-cream"></i> Ice Cake - Regular Flavours</div>
+            <div class="card-grid">
+                <div class="card" data-category="cake" data-id="regular-ice-cake">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="reg-ice-1.jpg,reg-ice-2.jpg,reg-ice-3.jpg">
+                            <i class="fas fa-chocolate"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Regular Flavours <small>रेगुलर फ्लेवर्स</small></h3>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="regular">
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Black Forest">Black Forest</option>
+                                <option value="Butterscotch">Butterscotch</option>
+                                <option value="Pineapple">Pineapple</option>
+                            </select>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Size:</div>
+                            <div class="size-buttons" data-product="regular">
+                                <button class="size-btn active" data-size="Bento (150g)" data-price="150">Bento (₹150)</button>
+                                <button class="size-btn" data-size="250g" data-price="180">250g (₹180)</button>
+                                <button class="size-btn" data-size="500g" data-price="250">500g (₹250)</button>
+                                <button class="size-btn" data-size="1kg" data-price="500">1kg (₹500)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="regular">₹150</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('regular', 'Regular Ice Cake')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Ice Cake -->
+            <div class="category-badge"><i class="fas fa-crown"></i> Ice Cake - Special Flavours</div>
+            <div class="card-grid">
+                <div class="card" data-category="cake" data-id="special-ice-cake">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="special-ice-1.jpg,special-ice-2.jpg,special-ice-3.jpg">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Special Flavours <small>स्पेशल फ्लेवर्स</small></h3>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="special">
+                                <option value="White Forest">White Forest</option>
+                                <option value="Truffle">Truffle</option>
+                                <option value="Red Velvet">Red Velvet</option>
+                                <option value="Rasmalai">Rasmalai</option>
+                                <option value="Gulkand">Gulkand</option>
+                            </select>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Size:</div>
+                            <div class="size-buttons" data-product="special">
+                                <button class="size-btn active" data-size="Bento (150g)" data-price="180">Bento (₹180)</button>
+                                <button class="size-btn" data-size="250g" data-price="200">250g (₹200)</button>
+                                <button class="size-btn" data-size="500g" data-price="400">500g (₹400)</button>
+                                <button class="size-btn" data-size="1kg" data-price="500">1kg (₹500)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="special">₹180</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('special', 'Special Ice Cake')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttercream Cake -->
+            <div class="category-badge"><i class="fas fa-birthday-cake"></i> Buttercream Cake</div>
+            <div class="card-grid">
+                <div class="card" data-category="cake" data-id="buttercream">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="buttercream-1.jpg,buttercream-2.jpg,buttercream-3.jpg">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Buttercream Cake <small>बटरक्रीम केक</small></h3>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="buttercream">
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Pineapple">Pineapple</option>
+                                <option value="Mango">Mango</option>
+                                <option value="Rose">Rose</option>
+                            </select>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Size:</div>
+                            <div class="size-buttons" data-product="buttercream">
+                                <button class="size-btn active" data-size="Bento" data-price="100">Bento (₹100)</button>
+                                <button class="size-btn" data-size="250g" data-price="200">250g (₹200)</button>
+                                <button class="size-btn" data-size="500g" data-price="300">500g (₹300)</button>
+                                <button class="size-btn" data-size="1kg" data-price="450">1kg (₹450)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="buttercream">₹100</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('buttercream', 'Buttercream Cake')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dry Cake -->
+            <div class="category-badge"><i class="fas fa-bread-slice"></i> Dry Cake</div>
+            <div class="card-grid">
+                <div class="card" data-category="cake" data-id="dry">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="dry-cake-1.jpg,dry-cake-2.jpg,dry-cake-3.jpg">
+                            <i class="fas fa-bread-slice"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Dry Cake <small>बिना क्रीम केक</small></h3>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="dry">
+                                <option value="Plain Slice">Plain Slice</option>
+                                <option value="Coconut">Coconut</option>
+                                <option value="Rawa">Rawa</option>
+                                <option value="Khajur">Khajur</option>
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Carrot">Carrot</option>
+                            </select>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Size:</div>
+                            <div class="size-buttons" data-product="dry">
+                                <button class="size-btn active" data-size="Bento" data-price="180">Bento (₹180)</button>
+                                <button class="size-btn" data-size="250g" data-price="280">250g (₹280)</button>
+                                <button class="size-btn" data-size="500g" data-price="400">500g (₹400)</button>
+                                <button class="size-btn" data-size="1kg" data-price="600">1kg (₹600)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="dry">₹180</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('dry', 'Dry Cake')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cupcakes -->
+            <div class="category-badge"><i class="fas fa-cupcake"></i> Cupcakes</div>
+            <div class="card-grid">
+                <div class="card" data-category="cake" data-id="cupcake">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="cupcake-1.jpg,cupcake-2.jpg,cupcake-3.jpg">
+                            <i class="fas fa-cupcake"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cupcakes <small>कपकेक</small></h3>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="cupcake">
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Strawberry">Strawberry</option>
+                                <option value="Blueberry">Blueberry</option>
+                                <option value="Assorted">Assorted</option>
+                            </select>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="cupcake">
+                                <button class="size-btn active" data-size="1 Piece" data-price="20">1 (₹20)</button>
+                                <button class="size-btn" data-size="4 Pieces" data-price="80">4 (₹80)</button>
+                                <button class="size-btn" data-size="6 Pieces" data-price="120">6 (₹120)</button>
+                                <button class="size-btn" data-size="12 Pieces" data-price="200">12 (₹200)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="cupcake">₹20</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('cupcake', 'Cupcakes')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESSERTS SECTION (Same Cake Format) -->
+        <section id="desserts">
+            <h2 class="section-title"><i class="fas fa-ice-cream"></i> Desserts & Sweets</h2>
+            
+            <!-- Donuts -->
+            <div class="category-badge"><i class="fas fa-donut"></i> Donuts</div>
+            <div class="card-grid">
+                <div class="card" data-category="dessert" data-id="donut">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="donut-1.jpg,donut-2.jpg,donut-3.jpg">
+                            <i class="fas fa-donut"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Donuts <small>डोनट्स</small></h3>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="donut">
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Strawberry">Strawberry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Type:</div>
+                            <div class="size-buttons" data-product="donut">
+                                <button class="size-btn active" data-size="Baked" data-price="25">Baked (₹25)</button>
+                                <button class="size-btn" data-size="Fried" data-price="25">Fried (₹25)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Mini Donuts:</div>
+                            <div class="size-buttons" data-product="minidonut">
+                                <button class="size-btn" data-size="Mini Donut" data-price="10">Mini (₹10/pcs)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="donut">₹25</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('donut', 'Donuts')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chocolates -->
+            <div class="category-badge"><i class="fas fa-candy-cane"></i> Chocolates</div>
+            <div class="card-grid">
+                <div class="card" data-category="dessert" data-id="chocolate">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="choco-1.jpg,choco-2.jpg,choco-3.jpg">
+                            <i class="fas fa-candy-cane"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chocolates <small>चॉकलेट</small></h3>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-tag"></i> Type:</div>
+                            <div class="size-buttons" data-product="chocolate">
+                                <button class="size-btn active" data-size="Regular" data-price="0">Regular</button>
+                                <button class="size-btn" data-size="Premium" data-price="0">Premium</button>
+                                <button class="size-btn" data-size="Gift Pack" data-price="0">Gift Pack</button>
+                            </div>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; padding: 0.5rem; background: #fff5f5; border-radius: 8px;">
+                            <p><i class="fas fa-heart"></i> Cake Sickle, Soufflé, Ferrero Style, Dubai Pistachio</p>
+                            <p><i class="fas fa-gift"></i> Personalised packing available</p>
+                        </div>
+                        
+                        <span class="price-tag">Call for Price</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('chocolate', 'Chocolates')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traditional Sweets -->
+            <div class="category-badge"><i class="fas fa-candy-cane"></i> Traditional Sweets</div>
+            <div class="card-grid">
+                <div class="card" data-category="dessert" data-id="sweet">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="sweet-1.jpg,sweet-2.jpg,sweet-3.jpg">
+                            <i class="fas fa-candy-cane"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Traditional Sweets <small>पारंपरिक मिठाई</small></h3>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="sweet">
+                                <button class="size-btn active" data-size="1 Piece" data-price="10">1 Pcs (₹10)</button>
+                                <button class="size-btn" data-size="3 Pieces" data-price="30">3 Pcs (₹30)</button>
+                                <button class="size-btn" data-size="6 Pieces" data-price="60">6 Pcs (₹60)</button>
+                                <button class="size-btn" data-size="12 Pieces" data-price="120">12 Pcs (₹120)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavours:</div>
+                            <select class="flavour-select" data-product="sweet">
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Mango">Mango</option>
+                                <option value="Milk">Milk</option>
+                                <option value="Gulab">Gulab</option>
+                                <option value="Pista">Pista</option>
+                                <option value="Kesar">Kesar</option>
+                            </select>
+                        </div>
+                        
+                        <div style="background: #e8f5e8; padding: 8px; border-radius: 8px; margin: 1rem 0;">
+                            <p><i class="fas fa-leaf"></i> Special Diabetic sweets available</p>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="sweet">₹10</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('sweet', 'Traditional Sweets')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ice Cream -->
+            <div class="category-badge"><i class="fas fa-ice-cream"></i> Ice Cream</div>
+            <div class="card-grid">
+                <div class="card" data-category="dessert" data-id="icecream">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="icecream-1.jpg,icecream-2.jpg,icecream-3.jpg">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ice Cream <small>आइसक्रीम</small></h3>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Pack Size:</div>
+                            <div class="size-buttons" data-product="icecream">
+                                <button class="size-btn active" data-size="Cup" data-price="5">Cup (₹5)</button>
+                                <button class="size-btn" data-size="Mini Family" data-price="30">Mini Family (₹30)</button>
+                                <button class="size-btn" data-size="Family Pack" data-price="60">Family (₹60)</button>
+                                <button class="size-btn" data-size="1 Litre" data-price="120">1 Litre (₹120)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="flavour-section">
+                            <div class="flavour-label"><i class="fas fa-tag"></i> Flavour:</div>
+                            <select class="flavour-select" data-product="icecream">
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Strawberry">Strawberry</option>
+                                <option value="Butterscotch">Butterscotch</option>
+                                <option value="Mango">Mango</option>
+                                <option value="Pistachio">Pistachio</option>
+                                <option value="Black Currant">Black Currant</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Kulfi -->
+                        <div style="margin: 1rem 0; padding: 0.8rem; background: #fff3e0; border-radius: 8px;">
+                            <div style="font-weight: bold;">Kulfi - ₹20 each</div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px;">
+                                <span class="flavour-badge">Malai</span>
+                                <span class="flavour-badge">Dry Fruit</span>
+                                <span class="flavour-badge">Pista</span>
+                                <span class="flavour-badge">Chocobar</span>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="icecream">₹5</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('icecream', 'Ice Cream')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIRYANI SECTION (Same Cake Format) -->
+        <section id="biryani">
+            <h2 class="section-title"><i class="fas fa-drumstick-bite"></i> Biryani Center</h2>
+            
+            <!-- Chicken Biryani -->
+            <div class="category-badge"><i class="fas fa-drumstick-bite"></i> Chicken Biryani</div>
+            <div class="card-grid">
+                <div class="card" data-category="biryani" data-id="chicken">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="chicken-1.jpg,chicken-2.jpg,chicken-3.jpg">
+                            <i class="fas fa-drumstick-bite"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag nonveg-tag">Non-Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chicken Dum Biryani</h3>
+                        <p style="color: #e6552e;">Ziraat & Gravy ke saath</p>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="chicken">
+                                <button class="size-btn active" data-size="Half" data-price="150">Half (₹150)</button>
+                                <button class="size-btn" data-size="Full" data-price="200">Full (₹200)</button>
+                                <button class="size-btn" data-size="1 Kg" data-price="900">1 Kg (₹900)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="chicken">₹150</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('chicken', 'Chicken Biryani')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mutton Biryani -->
+            <div class="category-badge"><i class="fas fa-utensils"></i> Mutton Biryani</div>
+            <div class="card-grid">
+                <div class="card" data-category="biryani" data-id="mutton">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="mutton-1.jpg,mutton-2.jpg,mutton-3.jpg">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag nonveg-tag">Non-Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mutton Biryani</h3>
+                        <p style="color: #e6552e;">Ziraat & Gravy ke saath</p>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="mutton">
+                                <button class="size-btn active" data-size="¼ Kg" data-price="170">¼ Kg (₹170)</button>
+                                <button class="size-btn" data-size="½ Kg" data-price="110">½ Kg (₹110)</button>
+                                <button class="size-btn" data-size="¾ Kg" data-price="750">¾ Kg (₹750)</button>
+                                <button class="size-btn" data-size="1 Kg" data-price="1000">1 Kg (₹1000)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="mutton">₹170</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('mutton', 'Mutton Biryani')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Veg Biryani -->
+            <div class="category-badge"><i class="fas fa-carrot"></i> Veg Biryani</div>
+            <div class="card-grid">
+                <!-- Vegetable Biryani -->
+                <div class="card" data-category="biryani" data-id="veg">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="veg-1.jpg,veg-2.jpg,veg-3.jpg">
+                            <i class="fas fa-carrot"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Vegetable Biryani</h3>
+                        <p style="color: #e6552e;">Ziraat & Gravy ke saath</p>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="veg">
+                                <button class="size-btn active" data-size="Half" data-price="70">Half (₹70)</button>
+                                <button class="size-btn" data-size="Full" data-price="130">Full (₹130)</button>
+                                <button class="size-btn" data-size="1 Kg" data-price="600">1 Kg (₹600)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="veg">₹70</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('veg', 'Vegetable Biryani')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paneer Biryani -->
+                <div class="card" data-category="biryani" data-id="paneer">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="paneer-1.jpg,paneer-2.jpg,paneer-3.jpg">
+                            <i class="fas fa-cheese"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Paneer Biryani</h3>
+                        <p style="color: #e6552e;">Ziraat & Gravy ke saath</p>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="paneer">
+                                <button class="size-btn active" data-size="Half" data-price="120">Half (₹120)</button>
+                                <button class="size-btn" data-size="Full" data-price="220">Full (₹220)</button>
+                                <button class="size-btn" data-size="1 Kg" data-price="1300">1 Kg (₹1300)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="paneer">₹120</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('paneer', 'Paneer Biryani')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Soya Biryani -->
+                <div class="card" data-category="biryani" data-id="soya">
+                    <div class="card-img-container">
+                        <div class="card-img" data-images="soya-1.jpg,soya-2.jpg,soya-3.jpg">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <button class="carousel-btn prev" onclick="changeImage(this, -1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-btn next" onclick="changeImage(this, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="image-dots"></div>
+                        <span class="veg-tag"><i class="fas fa-leaf"></i> Veg</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Soya Biryani</h3>
+                        <p style="color: #e6552e;">Ziraat & Gravy ke saath</p>
+                        
+                        <div class="size-section">
+                            <div class="size-label"><i class="fas fa-weight"></i> Quantity:</div>
+                            <div class="size-buttons" data-product="soya">
+                                <button class="size-btn active" data-size="Half" data-price="150">Half (₹150)</button>
+                                <button class="size-btn" data-size="Full" data-price="200">Full (₹200)</button>
+                                <button class="size-btn" data-size="1 Kg" data-price="500">1 Kg (₹500)</button>
+                            </div>
+                        </div>
+                        
+                        <span class="price-tag" data-price-display="soya">₹150</span>
+                        
+                        <button class="whatsapp-order" onclick="orderItem('soya', 'Soya Biryani')">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-flex container">
+            <div class="contact-info">
+                <h3><i class="fas fa-map-pin"></i> Let's connect</h3>
+                <p><i class="fas fa-store"></i> SAMS Cake Mart & Biryani Center<br> #12, Ashok Nagar, Hyderabad</p>
+                <p><i class="fas fa-phone-alt"></i> 7588627645 (Call / WhatsApp)</p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/917588627645?text=Hello%20SAMS!%20I%20want%20to%20place%20an%20order" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+                    <a href="tel:7588627645" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+                </div>
+                <p style="margin-top:2rem;"><i class="fas fa-clock"></i> Open daily: 11 AM – 10 PM</p>
+            </div>
+            <div style="flex:1; min-width:240px; background:#f6cfb5; border-radius:30px; padding:1.5rem; text-align:center;">
+                <i class="fas fa-map-marked-alt fa-3x"></i>
+                <p>📍 Banjara Hills, Hyderabad</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 SAMS Cake Mart & Biryani Center — taste the love <i class="fas fa-heart" style="color:#f05a5a;"></i></p>
+    </footer>
+
+    <script>
+        // Store current selections
+        const selections = {};
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup size buttons for all products
+            document.querySelectorAll('.size-buttons').forEach(container => {
+                const product = container.dataset.product;
+                if (!product) return;
+
+                // Initialize selection for this product
+                if (!selections[product]) {
+                    selections[product] = {
+                        size: container.querySelector('.size-btn.active')?.dataset.size || '',
+                        price: container.querySelector('.size-btn.active')?.dataset.price || '0',
+                        flavour: ''
+                    };
+                }
+
+                container.querySelectorAll('.size-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Remove active from siblings
+                        container.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                        
+                        // Add active to clicked
+                        this.classList.add('active');
+                        
+                        // Update selection
+                        if (selections[product]) {
+                            selections[product].size = this.dataset.size;
+                            selections[product].price = this.dataset.price;
+                        }
+                        
+                        // Update price display
+                        const priceDisplay = document.querySelector(`[data-price-display="${product}"]`);
+                        if (priceDisplay && this.dataset.price !== '0') {
+                            priceDisplay.textContent = `₹${this.dataset.price}`;
+                        } else if (this.dataset.price === '0') {
+                            priceDisplay.textContent = 'Call for Price';
+                        }
+                    });
+                });
+            });
+
+            // Setup flavour selects for all products
+            document.querySelectorAll('.flavour-select').forEach(select => {
+                const product = select.dataset.product;
+                if (product && selections[product]) {
+                    selections[product].flavour = select.value;
+                    
+                    select.addEventListener('change', function() {
+                        if (selections[product]) {
+                            selections[product].flavour = this.value;
+                        }
+                    });
+                }
+            });
+
+            // Initialize images
+            initializeImages();
+        });
+
+        function initializeImages() {
+            document.querySelectorAll('.card-img[data-images]').forEach(imgDiv => {
+                const images = imgDiv.dataset.images.split(',').map(img => img.trim()).filter(img => img);
+                
+                if (images.length > 0) {
+                    imgDiv.dataset.imagesList = JSON.stringify(images);
+                    imgDiv.dataset.currentIndex = '0';
+                    imgDiv.style.backgroundImage = `url('${images[0]}')`;
+                    
+                    // Create dots
+                    const container = imgDiv.closest('.card-img-container');
+                    const dotsContainer = container.querySelector('.image-dots');
+                    if (dotsContainer && images.length > 1) {
+                        dotsContainer.innerHTML = '';
+                        images.forEach((_, index) => {
+                            const dot = document.createElement('span');
+                            dot.className = 'dot' + (index === 0 ? ' active' : '');
+                            dot.onclick = (e) => {
+                                e.stopPropagation();
+                                showImage(imgDiv, index);
+                            };
+                            dotsContainer.appendChild(dot);
+                        });
+                    }
+                }
+            });
+        }
+
+        function showImage(imgDiv, index) {
+            const images = JSON.parse(imgDiv.dataset.imagesList);
+            if (index >= 0 && index < images.length) {
+                imgDiv.dataset.currentIndex = index;
+                imgDiv.style.backgroundImage = `url('${images[index]}')`;
+                
+                const container = imgDiv.closest('.card-img-container');
+                container.querySelectorAll('.dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+        }
+
+        function changeImage(btn, direction) {
+            const container = btn.closest('.card-img-container');
+            const imgDiv = container.querySelector('.card-img');
+            const images = JSON.parse(imgDiv.dataset.imagesList);
+            let currentIndex = parseInt(imgDiv.dataset.currentIndex || '0');
+            
+            currentIndex += direction;
+            if (currentIndex >= images.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            
+            showImage(imgDiv, currentIndex);
+        }
+
+        // Universal order function
+        function orderItem(productId, productName) {
+            const selection = selections[productId] || {};
+            const size = selection.size || '';
+            const flavour = selection.flavour ? `Flavour: ${selection.flavour}, ` : '';
+            const price = selection.price && selection.price !== '0' ? `at ₹${selection.price}` : '';
+            
+            let message = `Hi! I want to order ${productName}`;
+            if (flavour || size) {
+                message += ` - ${flavour}${size} ${price}`;
+            }
+            
+            window.open(`https://wa.me/917588627645?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('nav a, .cta-btn[href="#contact"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.getElementById(href.substring(1));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
